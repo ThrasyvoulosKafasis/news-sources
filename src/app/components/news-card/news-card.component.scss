@@ -1,0 +1,25 @@
+.card {
+    margin: 15px 0;
+
+    .source-img {
+
+        position: relative;        
+        height: 225px;
+        background-color: #55595c;
+
+        span {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-weight: bold;
+        }
+       
+    }
+
+    p {
+        font-size: 12.8px;
+        line-height: 2;
+    }
+}

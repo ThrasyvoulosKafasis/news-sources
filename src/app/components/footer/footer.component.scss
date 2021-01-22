@@ -1,0 +1,15 @@
+$textColor: #888787;
+
+footer {
+    color: $textColor;
+    margin-top: 30px;
+
+    .d-flex {
+        padding: 10px 0;
+    }
+
+    a {
+        color: $textColor;
+        text-decoration: none;
+    }
+}

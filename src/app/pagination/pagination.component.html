@@ -1,0 +1,35 @@
+<div class="row pagination-row">
+    <ul class="pagination justify-content-center">
+        <li class="page-item">
+            <a class="page-link">Displaying Page</a>
+        </li>
+
+        <!-- to previous page -->
+        <li class="page-item" *ngIf="currentPage > 1" (click)="prevPageBtnClicked()">
+            <a class="page-link">
+                <i class="bi bi-caret-left-fill"></i>
+            </a>
+        </li>
+
+        <!-- current page -->
+        <li class="page-item input-item">
+            <a class="page-link">
+                <input class="form-control" type="number" step="1" min="1" [value]="currentPage"
+                    (input)="paginationInputChange($event)">
+            </a>
+        </li>
+
+        <!-- total pages -->
+        <li class="page-item">
+            <a class="page-link">of {{ totalPages }}</a>
+        </li>
+
+        <!-- to next page -->
+        <li class="page-item" *ngIf="currentPage < totalPages" (click)="nextPageBtnClicked()">
+            <a class="page-link">
+                <i class="bi bi-caret-right-fill"></i>
+            </a>
+        </li>
+
+    </ul>
+</div>

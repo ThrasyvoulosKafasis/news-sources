@@ -1,0 +1,26 @@
+<header>
+
+    <div class="container-fluid bg-secondary">
+        <div class="d-flex justify-content-end">
+            <button class="btn bg-primary" id="userInitials">{{ userInitials() }}</button>
+
+            <div ngbDropdown>
+                <button class="btn" id="userDropdown" ngbDropdownToggle>
+                    Hello {{user.name}}
+                </button>
+
+                <div ngbDropdownMenu aria-labelledby="userDropdown">
+                    <button ngbDropdownItem>Settings</button>
+                    <button ngbDropdownItem>Logout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="profileSection">
+        <div class="container">
+            <img id="profileImg" src="/assets/profile-img.jpg" alt="Profile Image" />
+            <span>{{ user.name }} {{user.surname}}</span>
+        </div>
+    </div>
+</header>
