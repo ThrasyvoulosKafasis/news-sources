@@ -43,19 +43,23 @@ export class AppComponent implements OnInit {
       // get all categories from news sources
       this.categories = [...new Set(this.initialSources.map(item => item.category))];
 
+      // initial pagination
+      let pagination = {
+        start: 0,
+        end: 1 * this.itemsPerPage,
+        reInitArray: false
+      };
+
+      this.paginateSources(pagination);
+
     });
 
   }
 
   // get initial array items based on given pagination values
   paginateSources(pagination: any) {
-
-    // ExpressionChangedAfterItHasBeenCheckedError: Expression has changed after it was checked.
-    setTimeout(() => {
-      let sources = pagination.reInitArray ? [...this.initialSources] : this.newsSources;
-      this.newsSources = sources.slice(pagination.start, pagination.end);
-    }, 100);
-
+    let sources = pagination.reInitArray ? [...this.initialSources] : this.newsSources;
+    this.newsSources = sources.slice(pagination.start, pagination.end);
   }
 
   // on search channel input change

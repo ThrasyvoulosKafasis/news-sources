@@ -23,21 +23,17 @@ export class PaginationComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.setPaginationProperties();
+    // this.setPaginationProperties();
   }
 
   // set pagination properties
   setPaginationProperties(reInitArray: boolean = true) {
-
-    console.log('setPaginationProperties', this.itemsPerPage, this.totalPages);
 
     let pagination = {
       start: (this.currentPage - 1) * this.itemsPerPage,
       end: this.currentPage * this.itemsPerPage,
       reInitArray: reInitArray
     };
-
-    console.log(pagination);
 
     this.paginationChanged.emit(pagination);
   }
